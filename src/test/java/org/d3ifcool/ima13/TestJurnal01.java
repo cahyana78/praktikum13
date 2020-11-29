@@ -1,25 +1,22 @@
-package org.d3ifcool.ima06;
-
-import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
+package org.d3ifcool.ima13;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestTP02 {
+import org.junit.jupiter.api.Test;
+
+import java.io.*;
+
+public class TestJurnal01 {
 
     private static final String[] INPUT = {
-            "123","9840769"
+            "Dira\nRadi\n16"
     };
     private static final String[] OUTPUT = {
-            "321","9670489"
+            "Halo, Dira. Selamat sore.\nHalo, Radi. Selamat sore."
     };
 
     @Test
-    public void testTP() {
+    public void testJurnal() {
         InputStream originalIn = System.in;
         PrintStream originalOut = System.out;
 
@@ -28,7 +25,7 @@ public class TestTP02 {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             System.setOut(new PrintStream(bos));
 
-            TP02.main(null);
+            Jurnal01.main(null);
 
             assertEquals(OUTPUT[i] + "\n", bos.toString());
         }

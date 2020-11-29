@@ -1,26 +1,25 @@
-package org.d3ifcool.ima06;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package org.d3ifcool.ima13;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
 
-public class TestJurnal01 {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class TestTP01 {
 
     private static final String[] INPUT = {
-            "100 20",
-            "100 50",
-			"20 50"
+            "62.6 79.0 89.6"
     };
     private static final String[] OUTPUT = {
-            "25.000",
-            "3.125",
-			"0.625"
+            "17.0 26.1 32.0"
     };
 
     @Test
-    public void testJurnal() {
+    public void testTP() {
         InputStream originalIn = System.in;
         PrintStream originalOut = System.out;
 
@@ -29,7 +28,7 @@ public class TestJurnal01 {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             System.setOut(new PrintStream(bos));
 
-            Jurnal01.main(null);
+            TP01.main(null);
 
             assertEquals(OUTPUT[i] + "\n", bos.toString());
         }
