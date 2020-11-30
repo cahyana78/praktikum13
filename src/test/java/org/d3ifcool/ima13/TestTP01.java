@@ -15,7 +15,7 @@ public class TestTP01 {
             "62.6 79.0 89.6"
     };
     private static final String[] OUTPUT = {
-            "17.0 26.1 32.0 "
+            "17.0 26.1 32.0"
     };
 
     @Test
